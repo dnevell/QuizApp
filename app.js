@@ -10,7 +10,7 @@ const STORE = {
     {
       question: 'Who is the owner of the Krusty Krab?',
       answers: [
-        'Krusty the Clown',
+        'Krusty da Clown',
         'Spongebob',
         'Mr. Krabs',
         'King Neptune'
