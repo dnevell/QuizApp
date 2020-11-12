@@ -108,11 +108,11 @@ function submitAnswer() {
     <p class = 'questionText'>${cQuestion.question}
     </p>
     <form id = 'submitForm'>
-    <input type = 'radio' name = 'answers' id = "1" value = '${cQuestion.answers[0]}'> ${cQuestion.answers[0]}
-    <input type = 'radio' name = 'answers' id = "2" value = '${cQuestion.answers[1]}'> ${cQuestion.answers[1]}
-    <input type = 'radio' name = 'answers' id = "3" value = '${cQuestion.answers[2]}'> ${cQuestion.answers[2]}
-    <input type = 'radio' name = 'answers' id = "4" value = '${cQuestion.answers[3]}'> ${cQuestion.answers[3]}
-    <button id = 'submit'>Submit</button>
+    <label class = "block"><input type = 'radio' name = 'answers' id = "1" value = '${cQuestion.answers[0]}'> ${cQuestion.answers[0]}
+    <label class = "block"><input type = 'radio' name = 'answers' id = "2" value = '${cQuestion.answers[1]}'> ${cQuestion.answers[1]}
+    <label class = "block"><input type = 'radio' name = 'answers' id = "3" value = '${cQuestion.answers[2]}'> ${cQuestion.answers[2]}
+    <label class = "block"><input type = 'radio' name = 'answers' id = "4" value = '${cQuestion.answers[3]}'> ${cQuestion.answers[3]}
+    <label class = "block"><button id = 'submit'>Submit</button>
     </form>
     </div>
     `
@@ -126,7 +126,7 @@ function generateScoreCount(){
   let scoreCount = `<div class = 'score'>
   <h1>Spongebob Quiz</h1>
   <p>Question ${qNum + 1} out of 5</p>
-  <p>Score: ${score} out of 5</p>
+  <p>Score: ${score}</p>
   </div>
   `
   return scoreCount
@@ -134,7 +134,9 @@ function generateScoreCount(){
 
 function generateResultsPage(){
   let grandTotal = `<div class = "results">
-  <p class = "results_message">Congratulations! You answered ${STORE.score} out of 5 questions right.<p>
+  <p class = "results_message">Congratulations! 
+  <p>You answered 
+  <p>${STORE.score} out of 5 questions right.<p>
   <button id = "restartQuiz" type = "button">Restart Quiz</button>
   </div>
   `
@@ -199,7 +201,8 @@ $('main').on('click', '#submit', function(e){
   let cQuestion = STORE.questions[STORE.questionNumber]
   let selectorAnswer = $('input[name="answers"]:checked').val()
   let wrongAnswer = `<div class = "wrongAnswer">
-  <p><span class = "incorrect">INCORRECT</span> The correct answer is ${cQuestion.correctAnswer} .</p>
+  <p><span class = "incorrect">INCORRECT</span>
+  <p>The correct answer is ${cQuestion.correctAnswer} .</p>
   <button id = 'next'>Next Question</button>
   </div> ` 
   let correctAnswer = `<div class = "correctAnswer">
