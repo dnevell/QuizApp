@@ -51,9 +51,10 @@ header {
   color: ghostwhite;
 }
 
-/* .start {
-
-} */
+.start {
+  font-size: 50px;
+  font-weight: 100;
+}
 
 .question {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
