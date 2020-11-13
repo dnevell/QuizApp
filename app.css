@@ -8,7 +8,7 @@
   add point to shower answers are clickable
 */
 body {
-  background-image: url("assets/flowerBG.jpg");
+  background-image: url("./assets/flowerBG.jpg");
   width: 800px;
   align-content: center;
   margin-left: auto;
